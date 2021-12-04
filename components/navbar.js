@@ -17,19 +17,22 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
+import { IoLogoGithub } from 'react-icons/io5'
 
 
-const LinkItem = ({href,path,children}) => {
+const LinkItem = ({href,path,_target,children,...props}) => {
 
     const active = path === href
     const inactiveColor = useColorModeValue('gray200','whiteAlpha.900')
 
     return(
-        <NextLink href={href}>
+        <NextLink href={href} passHref>
             <Link 
                 p={2}
                 bg={active ? 'glassTeal' : undefined}
                 color={active ? '#202023' : inactiveColor}
+                _target={_target}
+                {...props}
             >
                 {children}
             </Link>
@@ -94,6 +97,19 @@ const NavBar = props => {
                      <LinkItem href='/contact' path={path}>
                         Contact
                      </LinkItem>
+
+                     <LinkItem
+                            _target="_blank"
+                            href="https://github.com/staind0001/next-portfolio"
+                            path={path}
+                            display="inline-flex"
+                            alignItems="center"
+                            style={{ gap: 4 }}
+                            pl={2}
+                        >
+                        <IoLogoGithub />
+                            Source
+                        </LinkItem>
                     
                  </Stack>
 
@@ -140,23 +156,16 @@ const NavBar = props => {
                                             Contact
                                         </MenuItem>   
                                     </NextLink>
-
-                                    
-                                    <NextLink href='http://www.enriquesoto.ch' passHref>
                                         <MenuItem 
                                             as={Link}
+                                            href='https://github.com/staind0001/next-portfolio'
                                         >
                                             View Source
                                         </MenuItem>   
-                                    </NextLink>
-
                                 </MenuList>
-                            
-                          
                         </Menu>
                     </Box>
                  </Box>
-
             </Container>
         </Box>
     )
