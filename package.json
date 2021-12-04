@@ -1,0 +1,34 @@
+{
+  "name": "next-porfolio",
+  "version": "1.0.0",
+  "description": "enrique soto website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "prettier": "prettier -write .",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "enrique soto",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
+    "@chakra-ui/react": "^1.7.2",
+    "@emotion/styled": "^11.6.0",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^5.3.3",
+    "next": "^12.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-toastify": "^8.1.0",
+    "three": "^0.135.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.7.0",
+    "eslint": "^8.3.0",
+    "eslint-config-next": "^12.0.4",
+    "prettier": "^2.5.0"
+  }
+}
